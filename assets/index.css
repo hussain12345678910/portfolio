@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    cursor: default;
+}
+
+nav {
+    width: 100%;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+.nav-style {
+    border-bottom: 1px solid grey;
+}
+
+nav div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.name {
+    color: rgb(66, 16, 230);
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+}
+
+.nav-items a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.underline {
+    height: 1px;
+    background-color: rgb(65, 21, 208);
+    width: 0;
+    transition: width 1s;
+}
+
+.nav-items a:hover > .underline {
+    width: 100%;
+}
+
+.nav-items a:hover {
+    color: rgb(62, 6, 244);
+}
+
+a:active {
+    color: rgb(62, 6, 244);
+}
+
+.panel {
+    background: linear-gradient(rgba(0, 0, 0, 0.675), rgba(0, 0, 0, 0.675)),
+        url("../assets/imgs/bgimg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80vh;
+    color: white;
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.panel h1 {
+    font-size: 3vw;
+}
+
+.panel h3 {
+    font-size: 1.6vw;
+    font-weight: 300;
+}
+
+.panel h1:nth-child(3) {
+    font-weight: 200;
+    font-size: 2vw;
+    margin-bottom: 10px;
+}
+
+.panel .button {
+    font-size: 1vw;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+.panel div {
+    margin-left: 20%;
+}
+
+.panel h3,
+.panel h1,
+.panel .button {
+    margin: 10px;
+    text-decoration: none;
+}
+
+.sec-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sec-1 div {
+    width: 50%;
+}
+
+.para {
+    font-size: 1vw;
+}
+
+.secondary-text {
+    color: grey;
+    font-weight: 400;
+}
+
+.sec-1 div div div h6 {
+    font-size: 1.5vw;
+}
+
+.sec-1 div div div {
+    width: 100%;
+}
+
+.main-heading {
+    color: rgb(76, 49, 164);
+    text-transform: uppercase;
+    font-size: 3vw;
+    text-align: center;
+    font-weight: 600;
+}
+
+.sec-1 div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+}
+
+.sec-1 div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.sec-1 img {
+    border-radius: 20px;
+    max-width: 100%;
+}
+
+.sec-2,
+.sec-1,
+.sec-3,
+.sec-4 {
+    width: 80%;
+    margin: auto;
+}
+
+.sec-2 div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sec-3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sec-3 div {
+    border-left: 2px solid rgb(76, 49, 164);
+    width: 45%;
+    padding-left: 10px;
+}
+
+.sec-3 .secondary-text {
+    margin-left: 10px;
+    margin-bottom: 2px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: calc(50% - 20px); /* Two cards per row */
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px 0.1px black;
+}
+
+footer {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    color: grey;
+    align-items: center;
+    background-color: rgb(76, 49, 164);
+}
+
+.footerName {
+    color: white;
+}
+.show-nav{
+    top: 0px !important;
+}
+#shownav{
+    display: none;
+}
+
+/* Media Queries for Responsiveness */
+
+@media screen and (max-width: 1200px) {
+    .card {
+        width: calc(100% - 20px); /* Full width cards on smaller screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav{
+        width: 98% !important;
+    }
+    #shownav{
+        display: block;
+    }
+    .nav-items {
+        position: absolute;
+        top: -700%;
+        width: 70%;
+        flex-direction: column;
+        z-index: 999999;
+        background-color: white;
+        padding: 10px;
+        transition: 1s;
+    }
+    nav div button{
+        font-size: 30px;
+        width: 50px;
+        border: 1px solid grey;
+        background-color: white;
+    }
+.sec-1 div h2{
+    font-size: 4vw !important;
+}
+.sec-1 div{
+    width: 100%;
+    gap: 20px
+}
+.main-heading{
+    font-size: 5vw;
+}
+.para{
+    font-size: 3vw;
+}
+.sec-1 div div div h6 {
+    font-size: 2vw;
+}
+    .nav-items a {
+        margin-bottom: 10px; /* Add space between navigation links */
+    }
+
+    .sec-1 img {
+        width: 100%; /* Ensure images take full width on smaller screens */
+        max-width: 100%;
+    }
+
+    .sec-1 div,
+    .sec-2 div,
+    .sec-3 div {
+        padding: 5px; /* Reduce padding for better layout on smaller screens */
+    }
+
+    .sec-3 div {
+        border-left: none; /* Remove left border on education and experience sections */
+        padding-left: 0;
+    }
+
+    .card {
+        padding: 15px; /* Adjust card padding on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav{
+        width: 95% !important;
+    }
+    .panel h1 {
+        font-size: 8vw !important; /* Increase font size for headings on smaller screens */
+    }
+
+    .panel h3 {
+        font-size: 5vw; /* Increase font size for subheadings on smaller screens */
+    }
+
+    .sec-1 div h2{
+        font-size: 4vw !important;
+    }
+    .sec-1 div{
+        width: 100%;
+        gap: 20px
+    }
+    .main-heading{
+        font-size: 8vw;
+    }
+    .para{
+        font-size: 3vw;
+    }
+    /* .sec-1 div .para{
+        
+        font-size: 4vw;
+    } */
+    .sec-1 div div div h6 {
+        font-size: 4vw;
+    }
+    .panel .button {
+        font-size: 4vw; /* Increase font size for buttons on smaller screens */
+    }
+
+    .sec-1 div {
+        flex-direction: column; /* Stack items in section 1 vertically on smaller screens */
+        align-items: center;
+        text-align: center;
+    }
+    .sec-3 div h2, .sec-1 div h2{
+        font-size: 7vw !important; 
+    }
+   
+    .sec-3 div {
+        width: 100%; /* Full width for education and experience sections on smaller screens */
+        border-left: none;
+        padding-left: 0;
+    }
+    .sec-3{
+        flex-direction: column;
+    }
+    .sec-2 div{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+}

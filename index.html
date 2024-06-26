@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hussain Alam Web-Developer</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/index.css">
 </head>
 <body>
@@ -25,16 +26,20 @@
 
             <h3>Hello, my name</h3>
             <h1>Hussain Alam</h1>
-            <h1>WEb Developer</h1>
+            <h1>
+                <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, I am Hussain Alam.", "I Love Design.", "I Love to Develop." ]'>
+                  <span class="wrap"></span>
+                </a>
+              </h1>
             <a class="button" href="./assets/cv/Hello, I’m Hussain. I’m Front-end web developer. I have completing my course from Aptech of Web develo.pdf" target="_blank">Download CV</a>
         </div>
     </div>
 
-    <h2 class="main-heading" id="AM">About Me</h2><br><br>
+    <h2 class="main-heading" data-aos="fade-up" data-aos-duration="2000" id="AM">About Me</h2><br><br>
 
-    <section class="sec-1">
+    <section class="sec-1" data-aos="fade-up" data-aos-duration="2000">
 
-        <img src="./assets/imgs/WhatsApp Image 2024-06-26 at 02.18.51_7b6839d1.jpg" width="28%" 
+        <img   src="./assets/imgs/WhatsApp Image 2024-06-26 at 02.18.51_7b6839d1.jpg" width="28%" 
         height="60%" alt="">
 
         <div>
@@ -66,9 +71,9 @@
         <br>
             <br>
 
-    <h2 class="main-heading" id="Ss">Skills</h2><br><br><br><br>
+    <h2 data-aos="fade-up" data-aos-duration="2000" class="main-heading" id="Ss">Skills</h2><br><br><br><br>
 
-   <section class="sec-2">
+   <section class="sec-2" data-aos="fade-right" data-aos-duration="2000">
 
     <div>
 
@@ -88,10 +93,10 @@
       <br>
         <br>
 
-   <h2 class="main-heading" id="Ed">Education</h2><br><br><br><br>
+   <h2 class="main-heading" data-aos="fade-up" data-aos-duration="2000" id="Ed">Education</h2><br><br><br><br>
 
    <section class="sec-3">
-       <div>
+       <div data-aos="fade-right" data-aos-duration="2000">
         <h2 style="font-size: 2.5vw;">My Education:</h2><br><br>
         
 
@@ -115,7 +120,7 @@
         <p class="secondary-text">2024-ONGOING</p>
         <p class="secondary-text para">I have completed and still doing many courses like Front-End WEB-DEVELOPMENT in it we learned about HTML,CSS,Javascript,Bootstrap and now I am learning BACK-END WEB-DEVELOPMENT and MERN-STACK</p>
     </div>
-    <div>
+    <div data-aos="fade-left" data-aos-duration="2000">
         <h2 style="font-size: 2.5vw;">My Experience:</h2><br><br>
         <h3>WEB DESIGNER</h3>
         <p class="secondary-text">PRIVATE</p>
@@ -133,14 +138,14 @@
         <br>
             <br>
 
-   <h2 class="main-heading" id="MS">My Services</h2><br><br><br><br>
+   <h2 class="main-heading" data-aos="fade-up" data-aos-duration="2000" id="MS">My Services</h2><br><br><br><br>
 <section class="sec-4">
     <div class="cards">
-        <div class="card">
+        <div class="card" data-aos="fade-left" data-aos-duration="2000">
             <h2 style="text-align: center;">Development</h2>
             <p class="secondary-text">Develop the front-end applications, user interactive (UI) web pages using web technologies like HTML5, CSS3, JavaScript and Bootstrap.</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="fade-right" data-aos-duration="2000">
             <h2 style="text-align: center;">Web Design</h2>
             <p class="secondary-text">Designed dynamic web pages <br>using HTML, CSS, and <br> JavaScript.</p>
         </div>
@@ -150,6 +155,10 @@
 <footer>
     <p>© <span class="footerName">Hussain Alam </span>All Rights Reserved. Designed by <span class="footerName">Hussain Alam</span></p>
 </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
 </body>
 </html>
 <script>
@@ -195,5 +204,60 @@ window.onscroll = function () {
     document.getElementById("navItems").addEventListener("mouseleave",()=>{
         document.getElementById("navItems").classList.remove("show-nav")
     })
+    var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
 
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
 </script>

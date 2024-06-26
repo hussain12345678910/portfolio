@@ -199,11 +199,11 @@ window.onscroll = function () {
     var showNav = document.getElementById("shownav");
     showNav.addEventListener("click",()=>{
         document.getElementById("navItems").classList.add("show-nav")
-    })
+    });
 
     document.getElementById("navItems").addEventListener("mouseleave",()=>{
         document.getElementById("navItems").classList.remove("show-nav")
-    })
+    });
     var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;

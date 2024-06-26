@@ -204,6 +204,13 @@ window.onscroll = function () {
     document.getElementById("navItems").addEventListener("mouseleave",()=>{
         document.getElementById("navItems").classList.remove("show-nav")
     });
+      window.onscroll = function() {
+        console.log("h")
+    var navItems = document.getElementById("navItems");
+    if (navItems.classList.contains("show-nav")) {
+        navItems.classList.remove("show-nav");
+    }
+};
     var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;

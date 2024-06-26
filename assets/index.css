@@ -9,8 +9,9 @@ nav {
     width: 100%;
     padding: 10px;
     position: sticky;
-    top: 0;
+    top: 0px;
     background-color: rgb(255, 255, 255);
+    z-index: 999999;
 }
 
 .nav-style {
@@ -101,11 +102,15 @@ a:active {
 .panel div {
     margin-left: 20%;
 }
-
 .panel h3,
 .panel h1,
 .panel .button {
     margin: 10px;
+    text-decoration: none;
+}
+
+.typewrite{
+    color: white;
     text-decoration: none;
 }
 

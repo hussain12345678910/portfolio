@@ -4,6 +4,9 @@
     font-family: "Roboto", sans-serif;
     cursor: default;
 }
+body{
+    overflow:hidden;
+}
 
 nav {
     width: 100%;

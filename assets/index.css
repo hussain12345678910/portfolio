@@ -253,7 +253,7 @@ footer {
     .nav-items {
         position: absolute;
         top: -700%;
-        width: 80%;
+        width: 100%;
         flex-direction: column;
         z-index: 999999;
         background-color: white;
